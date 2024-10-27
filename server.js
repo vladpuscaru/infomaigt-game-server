@@ -18,6 +18,9 @@ app.post("/api/data", async (req, res, next) => {
   res.json({value: "hello"});
 });
 
+server.keepAliveTimeout = 120 * 1000;
+server.headersTimeout = 120 * 1000;
+
 app.listen(() => {
   console.log(`Listening on port ${port}`);
 });
