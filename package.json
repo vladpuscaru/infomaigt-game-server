@@ -1,8 +1,24 @@
 {
-  "name": "node-server",
+  "name": "server",
   "packageManager": "yarn@3.4.1",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladpuscaru/infomaigt-game-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladpuscaru/infomaigt-game-server/issues"
+  },
+  "homepage": "https://github.com/vladpuscaru/infomaigt-game-server#readme"
 }
