@@ -1,9 +1,16 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 4000;
 
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 app.use(cors());
+
+app.get("/api", async (req, res, next) => {
+  res.send("Hello");
+})
 
 app.post("/api/data", async (req, res, next) => {
   console.log(req);
