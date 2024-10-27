@@ -35,8 +35,6 @@ const cors = require("cors");
 
 app.use(cors());
 
-app.get("/", (req, res) => res.type('html').send(html));
-
 app.get("/api", async (req, res, next) => {
   res.send("Hello");
 })
