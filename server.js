@@ -41,15 +41,24 @@ app.post("/api/data", async (req, res, next) => {
           Email: "vlad.cpuscaru@gmail.com",
           Name: "INFOMAIGT Game"
         },
-        To: {
-          Email: "vlad.cpuscaru@gmail.com",
-          Name: "Vlad Puscaru"
-        },
-        TextPart: req.body,
-        HTMLPart: req.body
+        To: [
+          {
+            Email: "vlad.cpuscaru@gmail.com",
+            Name: "Vlad Puscaru"
+          }
+        ],
+        Subject: "INFOMAIGT Game Answers",
+        TextPart: JSON.stringify(req.body),
+        HTMLPart: JSON.stringify(req.body)
       }
     ]
+  }, {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Basic ${Buffer.from(`${API_KEY}:${SECRET_KEY}`).toString('base64')}`
+    }
   });
+
   return res.status(apiResp.status).send(apiResp.statusText);
 });
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
