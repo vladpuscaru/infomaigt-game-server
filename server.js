@@ -7,6 +7,8 @@ app.use(cors());
 
 app.post("/api/data", async (req, res, next) => {
   console.log(req);
+
+  res.json({value: "hello"});
 });
 
 app.listen(() => {
